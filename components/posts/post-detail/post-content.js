@@ -1,3 +1,5 @@
+import ReactMarkdown from "react-markdown";
+
 import classes from "./post-content.module.css";
 import PostHeader from "./post-header";
 
@@ -9,13 +11,16 @@ const DUMMY_POST = {
   content: "# This is a first post",
 };
 
+/**
+ * Render Markdown to JSX with 'react-markdown' package
+ */
 const PostContent = () => {
   const imagePath = `/images/posts/${DUMMY_POST.slug}/${DUMMY_POST.image}`;
 
   return (
     <article className={classes.content}>
       <PostHeader title={DUMMY_POST.title} image={imagePath} />
-      {DUMMY_POST.content}
+      <ReactMarkdown>{DUMMY_POST.content}</ReactMarkdown>
     </article>
   );
 };
