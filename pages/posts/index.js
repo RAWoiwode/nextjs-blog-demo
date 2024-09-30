@@ -5,6 +5,7 @@ const AllPostsPage = ({ posts }) => {
   return <AllPosts posts={posts} />;
 };
 
+// Executes during the build process on the server
 export function getStaticProps() {
   const allPosts = getAllPosts();
 
