@@ -1,6 +1,7 @@
 import FeaturedPosts from "@/components/home/featured-posts";
 import Hero from "@/components/home/hero";
 import { getFeaturedPosts } from "@/lib/posts-util";
+import Head from "next/head";
 
 // const DUMMY_POSTS = [
 //   {
@@ -36,6 +37,13 @@ import { getFeaturedPosts } from "@/lib/posts-util";
 const HomePage = ({ posts }) => {
   return (
     <>
+      <Head>
+        <title>Ralph&apos;s blog</title>
+        <meta
+          name="description"
+          content="I post about programming and web dev"
+        />
+      </Head>
       <Hero />
       <FeaturedPosts posts={posts} />
     </>
