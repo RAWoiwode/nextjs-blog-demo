@@ -27,9 +27,7 @@ const handler = async (req, res) => {
     // console.log(newMessage);
     let client;
     try {
-      client = await MongoClient.connect(
-        "mongodb+srv://mongo-react:SxKkk93PBE2utZvX@cluster0.vrtleht.mongodb.net/nextjs-demo-blog?retryWrites=true&w=majority&appName=Cluster0"
-      );
+      client = await MongoClient.connect(process.env.MONGODB_URI);
     } catch (error) {
       res.status(500).json({ message: "oops" });
       return;
