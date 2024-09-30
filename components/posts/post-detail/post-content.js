@@ -47,7 +47,7 @@ const PostContent = ({ post }) => {
       const { className, children } = code;
       const language = className.split("-")[1]; // className is something like language-js
       return (
-        <Prism language={language} style={dracula}>
+        <Prism language={language} style={dracula} showLineNumbers>
           {children}
         </Prism>
       );
