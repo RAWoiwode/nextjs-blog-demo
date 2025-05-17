@@ -1,6 +1,6 @@
-import FeaturedPosts from "@/components/home/featured-posts.js";
-import Hero from "@/components/home/hero.js";
-import { getFeaturedPosts } from "@/lib/posts-util";
+import FeaturedPosts from "../components/home/featured-posts";
+import Hero from "../components/home/hero.js";
+import { getFeaturedPosts } from "../lib/posts-util";
 import Head from "next/head";
 
 // const DUMMY_POSTS = [
