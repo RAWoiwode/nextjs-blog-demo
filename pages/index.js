@@ -1,4 +1,4 @@
-import FeaturedPosts from "../components/home/featured-posts";
+import FeaturedPosts from "../components/home/featured-posts.js";
 import Hero from "../components/home/hero.js";
 import { getFeaturedPosts } from "../lib/posts-util";
 import Head from "next/head";
