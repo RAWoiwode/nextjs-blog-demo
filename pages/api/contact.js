@@ -26,8 +26,11 @@ const handler = async (req, res) => {
 
     // console.log(newMessage);
     let client;
+
+    const connectionString = `mongodb+srv://${process.env.mongodo_username}:${process.env.mongodo_password}@${process.env.mongodo_clustername}.vrtleht.mongodb.net/${process.env.mongodo_database}?retryWrites=true&w=majority&appName=Cluster0`;
+
     try {
-      client = await MongoClient.connect(process.env.MONGODB_URI);
+      client = await MongoClient.connect(connectionString);
     } catch (error) {
       res.status(500).json({ message: "oops" });
       return;

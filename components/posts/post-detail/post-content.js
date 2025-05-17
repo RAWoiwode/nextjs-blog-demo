@@ -1,10 +1,15 @@
 import Markdown from "react-markdown";
 import Image from "next/image";
-import { Prism } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { PrismLight } from "react-syntax-highlighter";
+import dracula from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
+import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
+import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 
 import classes from "./post-content.module.css";
 import PostHeader from "./post-header";
+
+PrismLight.registerLanguage("js", js);
+PrismLight.registerLanguage("css", css);
 
 /**
  * Render Markdown to JSX with 'react-markdown' package
@@ -47,9 +52,9 @@ const PostContent = ({ post }) => {
       const { className, children } = code;
       const language = className.split("-")[1]; // className is something like language-js
       return (
-        <Prism language={language} style={dracula} showLineNumbers>
+        <PrismLight language={language} style={dracula} showLineNumbers>
           {children}
-        </Prism>
+        </PrismLight>
       );
     },
   };
